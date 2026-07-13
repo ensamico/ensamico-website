@@ -1023,3 +1023,6 @@ html[dir="rtl"] .contact-link-button {
 .turnstile-wrap {
   margin: 6px 0 4px;
 }
+#contact {
+  scroll-margin-top: 90px;
+}

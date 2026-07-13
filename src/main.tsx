@@ -879,6 +879,33 @@ function App() {
     setMetaByProperty("twitter:description", t.meta.og);
     setCanonical(canonicalUrl);
   }, [lang, languageMeta.dir, languageMeta.htmlLang, languageMeta.path, t.meta.description, t.meta.og, t.meta.title]);
+  React.useEffect(() => {
+  const scrollToCurrentHash = () => {
+    const sectionId = window.location.hash.replace("#", "");
+
+    if (!sectionId) {
+      return;
+    }
+
+    const targetSection = document.getElementById(sectionId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  const timer = window.setTimeout(scrollToCurrentHash, 150);
+
+  window.addEventListener("hashchange", scrollToCurrentHash);
+
+  return () => {
+    window.clearTimeout(timer);
+    window.removeEventListener("hashchange", scrollToCurrentHash);
+  };
+}, []);
 
   return (
     <>
