@@ -97,10 +97,11 @@ em { color: var(--blue); font-style: italic; }
 }
 
 .logo-img {
+  width: 150px;
   height: 39px;
-  width: auto;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
 }
 
 .desktop-nav {
@@ -647,9 +648,10 @@ textarea:focus {
 }
 
 .footer-logo-img {
+  width: 150px;
   height: 39px;
-  width: auto;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
   display: block;
   margin-bottom: 18px;
 }
@@ -736,10 +738,12 @@ textarea:focus {
   .nav-wrap {
     min-height: 66px;
   }
-
-  .logo-img {
-    height: 34px;
-  }
+  
+.logo-img,
+.footer-logo-img {
+  width: 132px;
+  height: 34px;
+}
 
   .nav-actions {
   gap: 8px;
@@ -880,9 +884,11 @@ body {
     padding: 20px;
   }
 
-  .logo-img {
-    height: 31px;
-  }
+.logo-img,
+.footer-logo-img {
+  width: 120px;
+  height: 31px;
+}
 
   .language-switcher summary {
     height: 40px;
